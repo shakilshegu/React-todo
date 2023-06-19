@@ -21,14 +21,12 @@ function App() {
 
   function addTodo() {
     const isDuplicate = todos.some((obj) => obj.text === todo);
-
-    if (isDuplicate) {
+    if (isDuplicate ) {
       alert("Todo already exists!");
       return;
     }
-
-    if (todo) {
-      setTodos([...todos, { id: Date.now(), text: todo, status: false }]);
+    if (todo.trim()) {
+      setTodos([...todos, { id: Date.now(), text: todo.trim(), status: false }]);
       setTodo("");
     } else {
       alert("null value");
